@@ -3,7 +3,9 @@
 }
 
 h4{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 100;
     font-size: 20px;
     user-select: none;
@@ -14,8 +16,10 @@ h4{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 330px;
-    height: 50px;
+    /* width: 330px;
+    height: 50px; */
+    width: 400px;
+    height: 200px;
     background-color: linen;
     border-radius: 10px;
 }
@@ -25,9 +29,13 @@ h4{
     padding-left: 5px;
 }
 
+#slash{
+    padding-left: 10px;
+}
+
 #total-time{
     width: 40px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 #play-pause-button{
@@ -40,6 +48,12 @@ h4{
 
 #seek-bar{
     width: 150px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#volume-bar{
+    height: 150px;
     cursor: pointer;
     margin-left: 10px;
 }

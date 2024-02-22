@@ -2,7 +2,11 @@ const button = document.getElementById("play-pause-button");
 const currentTime = document.getElementById("current-time");
 const totalTime = document.getElementById("total-time");
 const seekBar = document.getElementById("seek-bar");
+
+const volumeBar = document.getElementById("volume-bar");
+
 const audio = new Audio("audio/Soft-Background-for-Interview.webm");
+
 let seeking = false;
 //event handlers
 //button events
@@ -53,6 +57,9 @@ seekBar.onchange = () => {
     }
     seeking = false;
 }
+
+//volume bar events
+
 
 // takes total seconds (number) and returns a formatted string 
 function formatTime(secs) {
