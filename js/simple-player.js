@@ -1,3 +1,59 @@
+const button = document.getElementById("play-pause-button");
+const currentTime = document.getElementById("current-time");
+const totalTime = document.getElementById("total-time");
+const seekBar = document.getElementById("seek-bar");
+const audio = new Audio("audio/Soft-Background-for-Interview.webm");
+let seeking = false;
+//event handlers
+//button events
+button.onclick = () => {
+    if(audio.paused){
+        audio.play();
+    }else{
+        audio.pause();
+    }
+}
+
+// audio events
+audio.onloadedmetadata = function(){
+    currentTime.innerHTML = formatTime(0);
+    totalTime.innerHTML = formatTime(audio.duration);
+    seekBar.max = Math.floor(audio.duration);
+    seekBar.value = 0;
+}
+
+audio.oncanplaythrough = () => {
+    seekBar.disabled = false;
+}
+
+audio.onplay = () => {
+    button.src = "images/pause.svg"
+}
+
+audio.onpause = () => {
+    button.src = "images/play.svg"
+}
+
+audio.ontimeupdate = () => {
+    currentTime.innerHTML = formatTime(audio.currentTime);
+    if(!seeking){
+        seekBar.value = Math.floor(audio.currentTime)
+    }
+}
+
+//seek bar events
+
+seekBar.oninput = () =>{
+    seeking = true;
+}
+seekBar.onchange = () => {
+    audio.currentTime = seekBar.value;
+    if(!audio.paused){
+    audio.play();
+    }
+    seeking = false;
+}
+
 // takes total seconds (number) and returns a formatted string 
 function formatTime(secs) {
     let hours = Math.floor(secs / 3600);

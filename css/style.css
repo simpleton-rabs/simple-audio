@@ -1,0 +1,45 @@
+*{
+    /* border: dotted; */
+}
+
+h4{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    user-select: none;
+    padding-bottom: 4px;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 330px;
+    height: 50px;
+    background-color: linen;
+    border-radius: 10px;
+}
+
+#current-time{
+    width: 40px;
+    padding-left: 5px;
+}
+
+#total-time{
+    width: 40px;
+    padding-left: 10px;
+}
+
+#play-pause-button{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#seek-bar{
+    width: 150px;
+    cursor: pointer;
+    margin-left: 10px;
+}
