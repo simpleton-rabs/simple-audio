@@ -24,10 +24,19 @@ audio.onloadedmetadata = function(){
     totalTime.innerHTML = formatTime(audio.duration);
     seekBar.max = Math.floor(audio.duration);
     seekBar.value = 0;
+
+    // volumeBar.disabled = false;
+
+
+    volumeBar.max = 1;
+    volumeBar.min = 0;
+    volumeBar.step = 0.1;
+    // volumeBar.value = 0;
 }
 
 audio.oncanplaythrough = () => {
     seekBar.disabled = false;
+    
 }
 
 audio.onplay = () => {
@@ -59,6 +68,10 @@ seekBar.onchange = () => {
 }
 
 //volume bar events
+
+volumeBar.onchange = () => {
+    audio.volume = volumeBar.value;
+}
 
 
 // takes total seconds (number) and returns a formatted string 
