@@ -5,6 +5,11 @@ const seekBar = document.getElementById("seek-bar");
 
 const volumeBar = document.getElementById("volume-bar");
 
+const songOne = document.getElementById("song-one");
+const songTwo = document.getElementById("song-two");
+const songThree = document.getElementById("song-three");
+
+
 const audio = new Audio("audio/Soft-Background-for-Interview.webm");
 
 let seeking = false;
@@ -15,6 +20,13 @@ button.onclick = () => {
         audio.play();
     }else{
         audio.pause();
+    }
+}
+
+songOne.onclick = () => {
+    if(audio.play){
+        audio.pause();
+        audio.src = songOne.dataset.song;
     }
 }
 

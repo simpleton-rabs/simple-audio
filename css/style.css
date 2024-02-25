@@ -57,3 +57,12 @@ h4{
     cursor: pointer;
     margin-left: 10px;
 }
+
+.song-option{
+    width: 50px;
+}
+
+.song-option:hover{
+    width: 55px;
+    transition: width 1s;
+}
