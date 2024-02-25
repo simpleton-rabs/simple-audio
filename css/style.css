@@ -58,11 +58,20 @@ h4{
     margin-left: 10px;
 }
 
+#song-menu{
+    display: flex;
+    /* flex-direction: column; */
+    height: 150px;
+}
+
 .song-option{
     width: 50px;
+    border: solid;
+    border-radius: 50%;
 }
 
 .song-option:hover{
-    width: 55px;
+    width: 53px;
     transition: width 1s;
+    /* background-color: blue; */
 }

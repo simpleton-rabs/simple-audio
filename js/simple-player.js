@@ -29,7 +29,18 @@ songOne.onclick = () => {
         audio.src = songOne.dataset.song;
     }
 }
-
+songTwo.onclick = () => {
+    if(audio.play){
+        audio.pause();
+        audio.src = songTwo.dataset.song;
+    }
+}
+songThree.onclick = () => {
+    if(audio.play){
+        audio.pause();
+        audio.src = songThree.dataset.song;
+    }
+}
 // audio events
 audio.onloadedmetadata = function(){
     currentTime.innerHTML = formatTime(0);
@@ -43,7 +54,7 @@ audio.onloadedmetadata = function(){
     volumeBar.max = 1;
     volumeBar.min = 0;
     volumeBar.step = 0.1;
-    // volumeBar.value = 0;
+    volumeBar.value = 1;
 }
 
 audio.oncanplaythrough = () => {
