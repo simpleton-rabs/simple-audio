@@ -10,25 +10,23 @@
 <body>
 
     <div id="container">
+        <!-- Menu for selecting track -->
         <div id="track-menu">
             Track
-            <div id="track-one" class="track-option" data-song="audio/Soft-Background-for-Interview.webm">1</div>
-            <div id="track-two" class="track-option" data-song="audio/song2.mp3">2</div>
-            <div id="track-three" class="track-option" data-song="audio/song3.mp3">3</div>
-                </div>
+            <div id="track-one" class="track-option" data-track="audio/Soft-Background-for-Interview.webm">1</div>
+            <div id="track-two" class="track-option" data-track="audio/track2.mp3">2</div>
+            <div id="track-three" class="track-option" data-track="audio/track3.mp3">3</div>
+        </div>
         <img id="play-pause-button" src="images/play.svg"/> 
         <h4 id="current-time">0:00</h4>
         <h4 id="slash">/</h4>
         <h4 id="total-time">0:00</h4>
         <input id="seek-bar" type="range" min="0" value="0" disabled>
         <label for="seek-bar">Seek</label>
-
+        <!-- volume bar -->
         <input id="volume-bar" type="range" min="0" value="0" orient="vertical">
         <label for="volume-bar">Volume</label>
 
-
-
-    </div>
-    
+    </div>  
 </body>
 </html>

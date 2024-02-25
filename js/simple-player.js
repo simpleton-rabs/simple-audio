@@ -6,12 +6,17 @@ const seekBar = document.getElementById("seek-bar");
 // Variable added to link to volume bar
 const volumeBar = document.getElementById("volume-bar");
 
-const songOne = document.getElementById("song-one");
-const songTwo = document.getElementById("song-two");
-const songThree = document.getElementById("song-three");
+// const songOne = document.getElementById("track-one");
+// const songTwo = document.getElementById("track-two");
+// const songThree = document.getElementById("track-three");
+
+const trackOption = document.getElementsByClassName("track-option");
 
 
-const audio = new Audio("audio/Soft-Background-for-Interview.webm");
+// const audio = new Audio("audio/Soft-Background-for-Interview.webm");
+
+// set default track on load
+const audio = new Audio(trackOption[0].dataset.track);
 
 let seeking = false;
 //event handlers
@@ -24,24 +29,29 @@ button.onclick = () => {
     }
 }
 
-songOne.onclick = () => {
-    if(audio.play){
-        audio.pause();
-        audio.src = songOne.dataset.song;
-    }
+// songOne.onclick = () => {
+//     if(audio.play){
+//         audio.pause();
+//         audio.src = songOne.dataset.song;
+//     }
+// }
+// songTwo.onclick = () => {
+//     if(audio.play){
+//         audio.pause();
+//         audio.src = songTwo.dataset.song;
+//     }
+// }
+// songThree.onclick = () => {
+//     if(audio.play){
+//         audio.pause();
+//         audio.src = songThree.dataset.song;
+//     }
+// }
+
+for (i=0; i < trackOption.length; i++){
+    trackOption(i).onclick = trackClick(event)
 }
-songTwo.onclick = () => {
-    if(audio.play){
-        audio.pause();
-        audio.src = songTwo.dataset.song;
-    }
-}
-songThree.onclick = () => {
-    if(audio.play){
-        audio.pause();
-        audio.src = songThree.dataset.song;
-    }
-}
+
 // audio events
 audio.onloadedmetadata = function(){
     currentTime.innerHTML = formatTime(0);
@@ -95,6 +105,13 @@ seekBar.onchange = () => {
 
 volumeBar.onchange = () => {
     audio.volume = volumeBar.value;
+}
+
+trackClick(event){
+    // set selection on track menu bar change button colour
+    audio.src=this.dataset.track;
+    // stop playing if playing
+    //change button to play reset
 }
 
 

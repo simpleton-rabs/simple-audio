@@ -58,15 +58,16 @@ h4{
     margin-left: 10px;
 }
 
-#song-menu{
+#track-menu{
     display: flex;
+    flex-direction: column;
     height: 150px;
     /* align-items: center;
     justify-content: center; */
     text-align: center;
 }
 
-.song-option{
+.track-option{
     height: 20px;
     width: 20px;
     border: solid;
@@ -75,7 +76,7 @@ h4{
     text-align: center;
 }
 
-.song-option:hover{
+.track-option:hover{
     height: 21px;
     width: 21px;
     transition: width 0.5s;
