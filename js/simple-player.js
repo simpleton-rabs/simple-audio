@@ -1,8 +1,9 @@
+// variables linking to HTML elements
 const button = document.getElementById("play-pause-button");
 const currentTime = document.getElementById("current-time");
 const totalTime = document.getElementById("total-time");
 const seekBar = document.getElementById("seek-bar");
-
+// Variable added to link to volume bar
 const volumeBar = document.getElementById("volume-bar");
 
 const songOne = document.getElementById("song-one");
