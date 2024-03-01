@@ -10,13 +10,18 @@ const volumeBar = document.getElementById("volume-bar");
 // const songTwo = document.getElementById("track-two");
 // const songThree = document.getElementById("track-three");
 
+//collection with different tracks
 const trackOption = document.getElementsByClassName("track-option");
 
-
+//index of selected track
+let selected = 0;
+const selectedColour = "gray";
 // const audio = new Audio("audio/Soft-Background-for-Interview.webm");
 
 // set default track on load
-const audio = new Audio(trackOption[0].dataset.track);
+const audio = new Audio(trackOption[selected].dataset.track);
+trackOption[selected].style.backgroundColor = selectedColour;
+
 
 let seeking = false;
 //event handlers
@@ -48,8 +53,8 @@ button.onclick = () => {
 //     }
 // }
 
-for (i=0; i < trackOption.length; i++){
-    trackOption(i).onclick = trackClick(event)
+for (i = 0; i < trackOption.length; i++){
+    trackOption[i].onclick = trackClick
 }
 
 // audio events
@@ -107,12 +112,26 @@ volumeBar.onchange = () => {
     audio.volume = volumeBar.value;
 }
 
-trackClick(event){
-    // set selection on track menu bar change button colour
-    audio.src=this.dataset.track;
-    // stop playing if playing
-    //change button to play reset
+function trackClick(event){
+//     // set selection on track menu bar change button colour
+    let newSelected = returnIndex(this);
+    if (newSelected != selected){
+        selected = newSelected
+    }
+
+    audio.src = this.dataset.track;
+
+//     // stop playing if playing
+//     //change button to play reset
 }
+
+function returnIndex(trackOption){
+    for(i=0; i < trackOption.length; i++){
+        if (track)
+    }
+
+}
+
 
 
 // takes total seconds (number) and returns a formatted string 
