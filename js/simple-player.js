@@ -22,7 +22,6 @@ const selectedColour = "gray";
 const audio = new Audio(trackOption[selected].dataset.track);
 trackOption[selected].style.backgroundColor = selectedColour;
 
-
 let seeking = false;
 //event handlers
 //button events
@@ -114,24 +113,34 @@ volumeBar.onchange = () => {
 
 function trackClick(event){
 //     // set selection on track menu bar change button colour
-    // let newSelected = returnIndex(this);
-    // if (newSelected != selected){
-    //     selected = newSelected
-    // }
+    let newSelected = returnIndex(this);
+    if (newSelected != selected){
+        selected = newSelected
+        console.warn(selected)
+
+    }
+
 //change track src to selected - stops play and seek defaults to 0:00 but button needs to be reset
     audio.src = this.dataset.track;
     button.src = "images/play.svg";
 }
 
-// function returnIndex(trackOption){
-//     for(i=0; i < trackOption.length; i++){
-//         if (track)
-//     }
+function returnIndex(trackOption){
+    for(i=0; i < trackOption.length; i++){
+        if (trackOption[i] == trackOption){
+            console.log(i)
+        return i   
+        } else{
+            console.warn("ITEM NOT FOUND")
+            return -1
+    } 
+    }
+}
 
+// trackOption[i].style.backgroundColor = selectedColour
+// else{
+//     trackOption[i].style.backgroundColor = "none"
 // }
-
-
-
 // takes total seconds (number) and returns a formatted string 
 function formatTime(secs) {
     let hours = Math.floor(secs / 3600);
