@@ -114,23 +114,21 @@ volumeBar.onchange = () => {
 
 function trackClick(event){
 //     // set selection on track menu bar change button colour
-    let newSelected = returnIndex(this);
-    if (newSelected != selected){
-        selected = newSelected
-    }
-
+    // let newSelected = returnIndex(this);
+    // if (newSelected != selected){
+    //     selected = newSelected
+    // }
+//change track src to selected - stops play and seek defaults to 0:00 but button needs to be reset
     audio.src = this.dataset.track;
-
-//     // stop playing if playing
-//     //change button to play reset
+    button.src = "images/play.svg";
 }
 
-function returnIndex(trackOption){
-    for(i=0; i < trackOption.length; i++){
-        if (track)
-    }
+// function returnIndex(trackOption){
+//     for(i=0; i < trackOption.length; i++){
+//         if (track)
+//     }
 
-}
+// }
 
 
 
