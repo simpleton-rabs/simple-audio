@@ -1,10 +1,10 @@
 /* set rest default fonts */
-*{
+* {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* set fonts size for counter */
-h4{
+h4 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 100;
     font-size: 20px;
@@ -12,16 +12,16 @@ h4{
     padding-bottom: 4px;
 }
 
-body{
+body {
     background-color: black;
     padding-top: 20px;
 }
 
-#container{
+#container {
     display: flex;
     flex-direction: row;
     align-items: center;
-/* increase width and height to allow verticial volume input and track selection  */
+    /* increase width and height to allow verticial volume input and track selection  */
     width: 500px;
     height: 200px;
     background-color: linen;
@@ -32,21 +32,22 @@ body{
     margin-right: auto;
 }
 
-#current-time{
+#current-time {
     width: 40px;
     padding-left: 5px;
 }
+
 /* font chosen needs padding on slash */
-#slash{
+#slash {
     padding-left: 10px;
 }
 
-#total-time{
+#total-time {
     width: 40px;
     padding-left: 5px;
 }
 
-#play-pause-button{
+#play-pause-button {
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -54,29 +55,30 @@ body{
     padding-right: 10px;
 }
 
-#seek-bar{
+#seek-bar {
     width: 150px;
     cursor: pointer;
     margin-left: 10px;
 }
 
 /* volume bar added */
-#volume-bar{
+#volume-bar {
     height: 150px;
     cursor: pointer;
     margin-left: 10px;
 }
 
 /* track menu added as column flex box */
-#track-menu{
+#track-menu {
     display: flex;
     flex-direction: column;
     height: 150px;
     /* centre track options*/
     text-align: center;
 }
+
 /* track options - divs to be used as buttons to select tracks for simplicity */
-.track-options{
+.track-options {
     height: 20px;
     width: 20px;
     border: solid;
@@ -86,7 +88,7 @@ body{
 }
 
 /* rollover with subtle transition */
-.track-options:hover{
+.track-options:hover {
     height: 21px;
     width: 21px;
     transition: width 0.5s, height 0.5s;
