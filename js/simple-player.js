@@ -5,13 +5,16 @@ const totalTime = document.getElementById("total-time");
 const seekBar = document.getElementById("seek-bar");
 // Variable added to link to volume bar
 const volumeBar = document.getElementById("volume-bar");
-
+volumeBar.max = 1;
+volumeBar.min = 0;
+volumeBar.step = 0.01;
+volumeBar.value = 1;
 // const songOne = document.getElementById("track-one");
 // const songTwo = document.getElementById("track-two");
 // const songThree = document.getElementById("track-three");
 
 //collection with different tracks
-const trackOption = document.getElementsByClassName("track-option");
+const trackOption = document.getElementsByClassName("track-options");
 
 //index of selected track
 let selected = 0;
@@ -56,6 +59,8 @@ for (i = 0; i < trackOption.length; i++){
     trackOption[i].onclick = trackClick
 }
 
+
+
 // audio events
 audio.onloadedmetadata = function(){
     currentTime.innerHTML = formatTime(0);
@@ -66,10 +71,10 @@ audio.onloadedmetadata = function(){
     // volumeBar.disabled = false;
 
 
-    volumeBar.max = 1;
-    volumeBar.min = 0;
-    volumeBar.step = 0.1;
-    volumeBar.value = 1;
+    // volumeBar.max = 1;
+    // volumeBar.min = 0;
+    // volumeBar.step = 0.1;
+    // volumeBar.value = 1;
 }
 
 audio.oncanplaythrough = () => {
@@ -116,25 +121,41 @@ function trackClick(event){
     let newSelected = returnIndex(this);
     if (newSelected != selected){
         selected = newSelected
-        console.warn(selected)
+        setSelectionColour(this)
+    }
+    audio.src = this.dataset.track;
+    audio.play();
+
+    // if (audio.play){
+    //     audio.play()
+    // } else{
+    //     audio.pause()
+    // }
 
     }
 
 //change track src to selected - stops play and seek defaults to 0:00 but button needs to be reset
-    audio.src = this.dataset.track;
-    button.src = "images/play.svg";
-}
+    // audio.src = this.dataset.track;
+    // button.src = "images/play.svg";
+// }
 
-function returnIndex(trackOption){
+function returnIndex(trackOptions) {
     for(i=0; i < trackOption.length; i++){
-        if (trackOption[i] == trackOption){
-            console.log(i)
+        if (trackOption[i] == trackOptions) {
+            // console.log(i)
         return i   
-        } else{
-            console.warn("ITEM NOT FOUND")
-            return -1
-    } 
+        }
     }
+        console.warn("ITEM NOT FOUND")
+        return -1
+    }
+function setSelectionColour (trackOptions){
+    for(i=0; i < trackOption.length; i++)
+    if (trackOption[i] == trackOptions){
+    trackOption[i].style.backgroundColor = selectedColour        
+    }else{
+            trackOption[i].style.backgroundColor = ""
+        }
 }
 
 // trackOption[i].style.backgroundColor = selectedColour
