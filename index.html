@@ -23,16 +23,24 @@ https://www.chosic.com/wp-content/uploads/2024/02/Valetines-Day(chosic.com).mp3 
 https://www.chosic.com/wp-content/uploads/2023/12/Winter-Long-Version(chosic.com).mp3 -->
             <div id="track-three" class="track-options" data-track="audio/track3.webm">3</div>
         </div>
+        
+        <div id="playandtime">
         <img id="play-pause-button" src="images/play.svg" />
         <h4 id="current-time">0:00</h4>
         <h4 id="slash">/</h4>
         <h4 id="total-time">0:00</h4>
+        </div>
+
+        <div id="seek">
         <input id="seek-bar" type="range" min="0" value="0" disabled>
         <label for="seek-bar">Seek</label>
-        <!-- volume bar -->
-        <input id="volume-bar" type="range" min="0" value="0" orient="vertical">
-        <label for="volume-bar">Volume</label>
+        </div>
 
+        <div id="volume"></div>
+        <!-- volume bar -->
+        <input id="volume-bar" type="range" min="0" value="0">
+        <label for="volume-bar">Volume</label>
+        </div>
     </div>
 </body>
 
