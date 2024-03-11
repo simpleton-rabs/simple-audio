@@ -1,5 +1,6 @@
 /* set rest default fonts */
 * {
+    border: dotted;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -23,7 +24,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     /* increase width and height to allow verticial volume input and track selection  */
-    width: 150px;
+    width: 500px;
     height: auto;
     background-color: linen;
     border-radius: 10px;
@@ -31,6 +32,11 @@ body {
     /* centre on screen */
     margin-left: auto;
     margin-right: auto;
+}
+
+#right{
+    display: flex;
+    flex-direction: column;
 }
 
 #current-time {
@@ -56,6 +62,10 @@ body {
     padding-right: 10px;
 }
 
+#playandtime{
+    /* width: 150px; */
+}
+
 #seek-bar {
     width: 150px;
     cursor: pointer;
@@ -64,7 +74,8 @@ body {
 
 /* volume bar added */
 #volume-bar {
-    height: 150px;
+    /* height: 150px; */
+    width: 150px;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -73,7 +84,7 @@ body {
 #track-menu {
     display: flex;
     flex-direction: column;
-    height: 150px;
+    /* height: 150px; */
     /* centre track options*/
     text-align: center;
 }
