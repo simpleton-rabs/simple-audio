@@ -21,10 +21,10 @@ body {
 #container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
     /* increase width and height to allow verticial volume input and track selection  */
-    width: 500px;
+    width: 250px;
     height: auto;
     background-color: linen;
     border-radius: 10px;
@@ -37,6 +37,7 @@ body {
 #right{
     display: flex;
     flex-direction: column;
+    width: 200px;
 }
 
 #current-time {
@@ -46,7 +47,7 @@ body {
 
 /* font chosen needs padding on slash */
 #slash {
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 #total-time {
@@ -63,7 +64,8 @@ body {
 }
 
 #playandtime{
-    /* width: 150px; */
+    display: flex;
+    width: 200px;
 }
 
 #seek-bar {
