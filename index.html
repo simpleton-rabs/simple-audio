@@ -13,40 +13,36 @@
 
     <div id="container">
 
-        <!-- <div id="left"> -->
-        <!-- Menu for selecting track -->
-        <div id="track-menu">
-            Track
-            <div id="track-one" class="track-options" data-track="audio/Soft-Background-for-Interview.webm">1</div>
-            <!-- track from https://www.chosic.com/download-audio/58314/
+            <!-- Menu for selecting track,inserted here so appears on left -->
+            <div id="track-menu">
+                Track
+                <!-- Divs used as buttons with data-track as src for each track, text not tagged for simplicity-->
+                <div id="track-one" class="track-options" data-track="audio/Soft-Background-for-Interview.webm">1</div>
+                <!-- track 2 converted from https://www.chosic.com/download-audio/58314/
 https://www.chosic.com/wp-content/uploads/2024/02/Valetines-Day(chosic.com).mp3 -->
-            <div id="track-two" class="track-options" data-track="audio/track2.webm">2</div>
-            <!-- track from https://www.chosic.com/download-audio/58209/
+                <div id="track-two" class="track-options" data-track="audio/track2.webm">2</div>
+                <!-- track 3 converted from https://www.chosic.com/download-audio/58209/
 https://www.chosic.com/wp-content/uploads/2023/12/Winter-Long-Version(chosic.com).mp3 -->
-            <div id="track-three" class="track-options" data-track="audio/track3.webm">3</div>
-        </div>
-        <!-- </div> -->
+                <div id="track-three" class="track-options" data-track="audio/track3.webm">3</div>
+            </div>
+            
+            <!-- div for controls to appear on right of track menu -->
+            <div id="right">
 
-        <!-- <div id="right">         -->
-        
-        <!-- <div id="playandtime"> -->
-        <img id="play-pause-button" src="images/play.svg" />
-        <h4 id="current-time">0:00</h4>
-        <h4 id="slash">/</h4>
-        <h4 id="total-time">0:00</h4>
-        <!-- </div> -->
+            <img id="play-pause-button" src="images/play.svg" />
+            <h4 id="current-time">0:00</h4>
+            <h4 id="slash">/</h4>
+            <h4 id="total-time">0:00</h4>
+            
+            <!-- seek bar -->
+            <input id="seek-bar" type="range" min="0" value="0" disabled>
+            <label for="seek-bar">Seek</label>
 
-        <div id="seek">
-        <input id="seek-bar" type="range" min="0" value="0" disabled>
-        <label for="seek-bar">Seek</label>
-        </div>
-
-        <div id="volume">
-        <!-- volume bar -->
-        <input id="volume-bar" type="range" min="0" value="0">
-        <label for="volume-bar">Volume</label>
-        </div>
-        <!-- </div> -->
+            <!-- volume bar -->
+            <input id="volume-bar" type="range" min="0" value="0">
+            <label for="volume-bar">Volume</label>
+            </div>
+    </div>
 </body>
 
 </html>

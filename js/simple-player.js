@@ -41,7 +41,7 @@ button.onclick = () => {
     }
 }
 
-//for loop for event listners if track option selected
+//for loop for event listeners if track option selected
 for (i = 0; i < trackOption.length; i++) {
     trackOption[i].onclick = trackClick
 }

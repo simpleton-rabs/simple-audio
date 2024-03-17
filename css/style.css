@@ -1,4 +1,4 @@
-/* set rest default fonts */
+/* set default fonts for all elements to match h4*/
 * {
     /* border: dotted; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11,6 +11,7 @@ h4 {
     font-size: 20px;
     user-select: none;
     padding-bottom: 4px;
+    margin: 0px;
 }
 
 body {
@@ -18,16 +19,14 @@ body {
     padding-top: 20px;
 }
 
+/* main container puts track menu next to controls in flex */
 #container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    /* increase width and height to allow verticial volume input and track selection  */
-    width: 250px;
-    height: auto;
+    /* align-items: center; */
+    width: 330px;
     background-color: linen;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     /* centre on screen */
     margin-left: auto;
@@ -35,9 +34,13 @@ body {
 }
 
 #right{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+    display: flex;    
+    flex-direction: row;
+    /* wrap controls so that they appear beneath eachother */
+    flex-wrap: wrap;
+    width: 250px;
+    align-items: center;
+    margin-left: 10px;
 }
 
 #current-time {
@@ -47,7 +50,7 @@ body {
 
 /* font chosen needs padding on slash */
 #slash {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 #total-time {
@@ -63,32 +66,27 @@ body {
     padding-right: 10px;
 }
 
-#playandtime{
-    display: flex;
-    width: 200px;
-}
-
 #seek-bar {
     width: 150px;
     cursor: pointer;
     margin-left: 10px;
+    padding-bottom: 15px;
+
 }
 
 /* volume bar added */
 #volume-bar {
-    /* height: 150px; */
     width: 150px;
     cursor: pointer;
     margin-left: 10px;
+    padding-bottom: 15px;
 }
 
-/* track menu added as column flex box */
+/* track menu added as  flex box */
 #track-menu {
     display: flex;
-    flex-direction: row;
-    width: 250px;
-    /* height: 150px; */
-    /* centre track options*/
+    flex-direction: column;
+    width: 50px;
     text-align: center;
     align-items: center;
 }
