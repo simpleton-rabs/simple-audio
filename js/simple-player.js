@@ -29,6 +29,9 @@ trackOption[selected].style.backgroundColor = selectedColour;
 //boolean set to false - not seeking
 let seeking = false;
 
+//boolean set to false - not playing
+let playing = false;
+
 //event handlers
 
 //button events
@@ -36,8 +39,13 @@ let seeking = false;
 button.onclick = () => {
     if (audio.paused) {
         audio.play();
+        //set playing true
+        playing = true;
+        // console.log(playing);
     } else {
         audio.pause();
+        playing = false;
+        // console.log(playing);
     }
 }
 
@@ -65,7 +73,7 @@ audio.onplay = () => {
     button.src = "images/pause.svg"
 }
 
-// when audion pauses button shows play
+// when audio pauses button shows play
 audio.onpause = () => {
     button.src = "images/play.svg"
 }
@@ -108,10 +116,25 @@ function trackClick(event) {
         //call function to set selected track colour
         setSelectionColour(this)
     }
-    //update src to be new track selection and play - defaults from time 00:00
-    audio.src = this.dataset.track;
-    audio.play();
-}
+    //update src to be new track selection  defaults from time 00:00
+    
+
+    if (playing = true){
+        audio.src = this.dataset.track;
+        audio.play()
+
+        console.log(playing)
+    } 
+    if (playing = false){
+        audio.src = this.dataset.track;
+        audio.pause()
+        console.log(playing)
+    }
+    }
+
+    // audio.src = this.dataset.track;
+    // button.src = "images/play.svg";
+
 
 //function to return integer to index current track and check correct
 function returnIndex(trackOptions) {
